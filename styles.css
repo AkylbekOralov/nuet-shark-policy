@@ -15,7 +15,7 @@
 }
 
 html {
-  color-scheme: light;
+  color-scheme: light dark;
 }
 
 body {
@@ -244,5 +244,37 @@ li + li {
   .content-section,
   .document {
     padding: 58px 0 76px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101513;
+    --surface: #19221f;
+    --text: #eef4ef;
+    --muted: #b8c5bd;
+    --border: #324039;
+    --accent: #5eead4;
+    --accent-dark: #99f6e4;
+    --accent-soft: #14352f;
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  }
+
+  .site-header {
+    background: rgba(16, 21, 19, 0.94);
+  }
+
+  .hero {
+    background:
+      linear-gradient(135deg, rgba(94, 234, 212, 0.12), rgba(16, 21, 19, 0) 52%),
+      var(--bg);
+  }
+
+  .site-footer {
+    background: #070a09;
+  }
+
+  .site-footer p {
+    color: #b8c5bd;
   }
 }
