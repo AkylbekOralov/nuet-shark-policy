@@ -91,6 +91,42 @@ a:focus-visible {
   color: var(--accent-dark);
 }
 
+.theme-switcher {
+  display: inline-flex;
+  width: fit-content;
+  padding: 3px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.theme-switcher button {
+  min-height: 34px;
+  padding: 0 10px;
+  background: transparent;
+  color: var(--muted);
+  border: 0;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-switcher button:hover {
+  color: var(--accent-dark);
+}
+
+.theme-switcher button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.theme-switcher button[aria-pressed="true"] {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
 .hero {
   padding: 56px 0 40px;
   background:
@@ -247,8 +283,46 @@ li + li {
   }
 }
 
+:root[data-theme="dark"] {
+  --bg: #101513;
+  --surface: #19221f;
+  --text: #eef4ef;
+  --muted: #b8c5bd;
+  --border: #324039;
+  --accent: #5eead4;
+  --accent-dark: #99f6e4;
+  --accent-soft: #14352f;
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme="dark"] .site-header {
+  background: rgba(16, 21, 19, 0.94);
+}
+
+:root[data-theme="dark"] .hero {
+  background:
+    linear-gradient(135deg, rgba(94, 234, 212, 0.12), rgba(16, 21, 19, 0) 52%),
+    var(--bg);
+}
+
+:root[data-theme="dark"] .site-footer {
+  background: #070a09;
+}
+
+:root[data-theme="dark"] .site-footer p {
+  color: #b8c5bd;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --bg: #101513;
     --surface: #19221f;
     --text: #eef4ef;
@@ -260,21 +334,21 @@ li + li {
     --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
   }
 
-  .site-header {
+  :root:not([data-theme]) .site-header {
     background: rgba(16, 21, 19, 0.94);
   }
 
-  .hero {
+  :root:not([data-theme]) .hero {
     background:
       linear-gradient(135deg, rgba(94, 234, 212, 0.12), rgba(16, 21, 19, 0) 52%),
       var(--bg);
   }
 
-  .site-footer {
+  :root:not([data-theme]) .site-footer {
     background: #070a09;
   }
 
-  .site-footer p {
+  :root:not([data-theme]) .site-footer p {
     color: #b8c5bd;
   }
 }

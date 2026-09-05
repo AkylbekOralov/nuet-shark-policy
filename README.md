@@ -8,9 +8,11 @@ NuetShark iOS app. It includes:
 - `terms.html` - Terms of Use
 - `support.html` - support information
 - `styles.css` - shared styling
+- `theme.js` - local theme preference control
 
-The site uses plain HTML and CSS only. It does not use JavaScript, analytics,
-cookies, tracking pixels, external fonts, CDN assets, or third-party scripts.
+The site uses plain HTML, CSS, and a small local JavaScript file for the theme
+selector. It does not use analytics, cookies, tracking pixels, external fonts,
+CDN assets, or third-party scripts.
 
 ## Deploying With GitHub Pages
 
